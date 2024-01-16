@@ -5,7 +5,7 @@ const { BadRequestRequestError } = require('../../../cores/error.response');
 const redisClient = require('../../../dbs/client');
 
 class MovieService {
-    static async searchMovieAllIndex({ idx, query }) { 
+    static async searchMovieAllIndex({ idx, query }) {
         if (!idx || !query) throw new BadRequestRequestError();
 
         const formattedQuery = `%${query}%`;
