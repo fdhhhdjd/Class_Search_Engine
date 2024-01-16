@@ -4,9 +4,9 @@
 const { EntityId } = require('redis-om');
 
 //* IMPORT
+const { BadRequestRequestError } = require('../../../cores/error.response');
 const redisClient = require('../../../dbs/client');
 const carRepository = require('../models/schemas/car.schema');
-const { BadRequestRequestError } = require('../../../cores/error.response');
 
 class CarService {
     static async searchAll({ query }) {

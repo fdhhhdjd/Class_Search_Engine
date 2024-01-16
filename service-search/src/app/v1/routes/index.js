@@ -13,6 +13,9 @@ const router = express.Router();
 // Todo: 1. Cars
 router.use('/v1/cars', require('./cars'));
 
+// Todo: 2 Movie
+router.use('/v1/movies', require('./movies'));
+
 router.get('/v1', async (_, res, __) => {
     const dataTestRedis = await redisClient.get(Car);
     const healthCheck = {

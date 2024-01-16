@@ -4,7 +4,7 @@ export $(shell sed 's/=.*//' .env)
 
 # Folder constants
 DOCKER_COMPOSE := docker-compose.yml
-DOCKER_EXEC_APP := api_backend_service
+DOCKER_EXEC_APP := service_search
 DOCKER_EXEC_CACHE := redis-search
 
 # Run auto
