@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+    # Todo: 1. Service Search
+    service_search:
+        container_name: service_search
+        depends_on:
+            - redis-search
+        restart: always
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        environment:
+            - NODE_ENV=${NODE_ENV}
+        ports:
+            - ${PORT}:${PORT}
+        volumes:
+            - './src:/usr/src/app/src'
+        env_file:
+            - .env
+        command: yarn dev
+        networks:
+            - service_search_service-network
+
+    # Todo: 2. Redis search
+    redis-search:
+        container_name: redis-search
+        build:
+            context: ./docker
+            dockerfile: Dockerfile-redis
+        restart: always
+        env_file:
+            - .env
+        command: sh /data/import-data.sh
+        ports:
+            - ${REDIS_MAPPING}:${REDIS_PORT}
+        networks:
+            - service_search_service-network
+        healthcheck:
+            test: ['CMD', 'redis-cli', 'ping']
+            interval: 30s
+            timeout: 10s
+            retries: 5
+networks:
+    service_search_service-network:
+        driver: bridge
