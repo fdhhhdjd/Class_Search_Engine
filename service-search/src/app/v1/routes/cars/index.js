@@ -11,22 +11,25 @@ const CarControllers = require('../../controllers/car.controller');
 // Todo 1. Search much
 router.get('/search', asyncHandler(CarControllers.searchAll));
 
-// Todo 2. Search much index not follow
+// Todo 2. Get all
+router.get('/get/all', asyncHandler(CarControllers.getAllCars));
+
+// Todo 3. Search much index not follow
 router.post('/search/idx', asyncHandler(CarControllers.searchAllIndex));
 
-// Todo 3. Get detail
+// Todo 4. Get detail
 router.get('/:id', asyncHandler(CarControllers.getDetailId));
 
-// Todo 4. Create
+// Todo 5. Create
 router.post('/create', asyncHandler(CarControllers.create));
 
-// Todo 5. Update
+// Todo 6. Update
 router.patch('/update', asyncHandler(CarControllers.update));
 
-// Todo 6. Delete
+// Todo 7. Delete
 router.delete('/delete/:id', asyncHandler(CarControllers.delete));
 
-// Todo 7. Set Expire
+// Todo 8. Set Expire
 router.get('/expire/:id', asyncHandler(CarControllers.expired));
 
 module.exports = router;

@@ -19,9 +19,21 @@ class CarService {
 
         const count = await searchQuery.count();
 
-        const car = await searchQuery.return.all();
+        const cars = await searchQuery.return.all();
 
-        return { count, car };
+        return { count, cars };
+    }
+
+    static async getAllCars() {
+        const searchQuery = carRepository.search();
+
+        // Count the total number of results
+        const count = await searchQuery.count();
+
+        // Retrieve all results without any search condition
+        const cars = await searchQuery.return.all();
+
+        return { count, cars };
     }
 
     static async searchAllIndex({ idx, query }) {

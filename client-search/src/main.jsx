@@ -1,10 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+//* LIB
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+//* IMPORT
+import "./App.css";
+import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
+import LoadingPage from "@/pages/loading.jsx";
+import router from "@/routes/index.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} fallbackElement={<LoadingPage />} />
+);

@@ -13,6 +13,13 @@ class CarControllers {
         }).send(res);
     }
 
+    async getAllCars(_, res, __) {
+        new SuccessResponse({
+            message: 'Get All Cars success.',
+            metadata: await CarService.getAllCars(),
+        }).send(res);
+    }
+
     async searchAllIndex(req, res, __) {
         const { idx, query } = req.body;
 
