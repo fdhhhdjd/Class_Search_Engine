@@ -6,9 +6,9 @@ const redisClient = require('../../../dbs/client');
 
 class MovieService {
     static async searchMovieAllIndex({ idx, query }) {
-        if (!idx || !query) throw new BadRequestRequestError();
+        if (!idx) throw new BadRequestRequestError();
 
-        const formattedQuery = `%${query}%`;
+        const formattedQuery = `%${!query ? 't' : query}%`;
         const formattedIndex = `${idx}`;
 
         const searchResults = await redisClient.search(formattedIndex, `@title:${formattedQuery}`);
