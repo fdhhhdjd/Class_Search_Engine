@@ -1,0 +1,46 @@
+{
+    "name": "Service-search_Redis",
+    "version": "0.0.1",
+    "main": "server.js",
+    "repository": "git@github.com:fdhhhdjd/Class_Search_Engine",
+    "author": "fdhhhdjd <nguyentientai10@gmail.com>",
+    "type": "commonjs",
+    "license": "MIT",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint . --ext .cjs,.mjs,.js,.cts,.mts --fix --ignore-path .gitignore && echo \"Tai Dev Check Eslint ✅\"",
+        "lint:fix": "eslint . --fix --ext .js",
+        "format": "prettier --write src/**/*.{js}"
+    },
+    "engines": {
+        "node": ">=16.20.1",
+        "npm": ">= 8.19.4"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "express-rate-limit": "^7.1.5",
+        "helmet": "^7.1.0",
+        "lodash": "^4.17.21",
+        "morgan": "^1.10.0",
+        "redis-om": "^0.4.3",
+        "uuid": "^9.0.1",
+        "winston": "^3.11.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-import-resolver-alias": "^1.1.2",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-prettier": "^5.0.1",
+        "eslint-plugin-promise": "^6.1.1",
+        "eslint-plugin-security": "^2.1.0",
+        "prettier": "^3.0.3"
+    }
+}
