@@ -1,10 +1,10 @@
-# 1: Search Theo Từ khóa:
+## 1: Search Theo Từ khóa:
 
 ```javascript
 const result1 = await index.search('your_keyword');
 ```
 
-# 2: Tìm Kiếm Theo Mô Hình Phân Cấp (Faceting):
+## 2: Tìm Kiếm Theo Mô Hình Phân Cấp (Faceting):
 
 ```javascript
 const result2 = await index.search('your_keyword', {
@@ -12,7 +12,7 @@ const result2 = await index.search('your_keyword', {
 });
 ```
 
-# 3: Tìm Kiếm Theo Dải Giá:
+## 3: Tìm Kiếm Theo Dải Giá:
 
 ```javascript
 const result3 = await index.search('', {
@@ -20,13 +20,13 @@ const result3 = await index.search('', {
 });
 ```
 
-# 4: Tìm Kiếm Gần Đúng (Fuzzy Search):
+## 4: Tìm Kiếm Gần Đúng (Fuzzy Search):
 
 ```javascript
 const result4 = await index.search('your_keyword~');
 ```
 
-# 5: Tìm Kiếm Theo Vị Trí (Geolocation):
+## 5: Tìm Kiếm Theo Vị Trí (Geolocation):
 
 ```javascript
 const result5 = await index.search('', {
@@ -35,7 +35,7 @@ const result5 = await index.search('', {
 });
 ```
 
-# 6: Tìm Kiếm Theo Ngày:
+## 6: Tìm Kiếm Theo Ngày:
 
 ```javascript
 const result5 = await index.search('', {
@@ -44,7 +44,7 @@ const result5 = await index.search('', {
 });
 ```
 
-# 7: Tìm Kiếm Theo Danh Mục:
+## 7: Tìm Kiếm Theo Danh Mục:
 
 ```javascript
 const result7 = await index.search('your_keyword', {
@@ -52,25 +52,25 @@ const result7 = await index.search('your_keyword', {
 });
 ```
 
-# 8: Tìm Kiếm Theo Nhiều Từ Khóa (AND):
+## 8: Tìm Kiếm Theo Nhiều Từ Khóa (AND):
 
 ```javascript
 const result8 = await index.search('keyword1 AND keyword2');
 ```
 
-# 9: Tìm Kiếm Theo Từ Khóa Phổ Biến:
+## 9: Tìm Kiếm Theo Từ Khóa Phổ Biến:
 
 ```javascript
 const result9 = await index.search('popular_keywords');
 ```
 
-# 10: Tìm Kiếm Đa Truy Vấn (Boolean Query):
+## 10: Tìm Kiếm Đa Truy Vấn (Boolean Query):
 
 ```javascript
 const result10 = await index.search('keyword1 AND (keyword2 OR keyword3) NOT keyword4');
 ```
 
-# 11: Sắp Xếp Kết Quả:
+## 11: Sắp Xếp Kết Quả:
 
 ```javascript
 const result = await index.search('search_query', {
@@ -79,7 +79,7 @@ const result = await index.search('search_query', {
 });
 ```
 
-# 12: Phân Trang Kết Quả:
+## 12: Phân Trang Kết Quả:
 
 ```javascript
 const result = await index.search('search_query', {
@@ -89,7 +89,7 @@ const result = await index.search('search_query', {
 });
 ```
 
-# 13: Tìm Kiếm Đa Nguồn:
+## 13: Tìm Kiếm Đa Nguồn:
 
 ```javascript
 const result = await searchClient.multipleQueries([
@@ -104,7 +104,7 @@ const result = await searchClient.multipleQueries([
 ]);
 ```
 
-# 14: Gợi Ý Tìm Kiếm (Autocomplete):
+## 14: Gợi Ý Tìm Kiếm (Autocomplete):
 
 ```javascript
 const result = await index.search('partial_query', {
@@ -113,7 +113,7 @@ const result = await index.search('partial_query', {
 });
 ```
 
-# 15: Lấy những trường cần
+## 15: Lấy những trường cần
 
 ```javascript
 const result = await index.search('search_query', {
@@ -126,7 +126,7 @@ const result = await index.search('search_query', {
 console.log(result.hits);
 ```
 
-# 16: Tìm kiếm nhiều option v1
+## 16: Tìm kiếm nhiều option v1
 
 ```javascript
 const searchQuery = {
@@ -151,7 +151,7 @@ index
     });
 ```
 
-# 17: Tìm kiếm nhiều option v2
+## 17: Tìm kiếm nhiều option v2
 
 ```javascript
 const searchQuery = {
