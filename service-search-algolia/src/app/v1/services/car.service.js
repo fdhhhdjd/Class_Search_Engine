@@ -6,7 +6,14 @@ const index = require('../../../dbs');
 
 class CarService {
     static async searchAll({ query }) {
-        const result = await index.search(query);
+        const searchQuery = {
+            attributesToHighlight: ['make', 'model'],
+            attributesToSnippet: ['content:2'],
+            attributesToRetrieve: ['make', 'model'],
+            typoTolerance: 'min',
+        };
+
+        const result = await index.search(query, searchQuery);
         return result;
     }
 

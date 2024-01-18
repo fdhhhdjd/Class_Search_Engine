@@ -123,7 +123,7 @@ const result = await index.search('search_query', {
 });
 
 // Kết quả sẽ chỉ chứa các trường được chỉ định trong attributesToRetrieve
-console.log(result.hits);
+console.log(result);
 ```
 
 ## 16: Tìm kiếm nhiều option v1
@@ -142,7 +142,7 @@ const searchQuery = {
 };
 
 index
-    .search(searchQuery)
+    .search('search_query', searchQuery)
     .then(({ hits }) => {
         console.log('Result', hits);
     })
@@ -180,7 +180,7 @@ const searchQuery = {
 };
 
 index
-    .search(searchQuery)
+    .search('search_query', searchQuery)
     .then(({ hits }) => {
         console.log('Kết quả tìm kiếm:', hits);
     })
