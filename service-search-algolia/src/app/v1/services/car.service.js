@@ -5,19 +5,35 @@
 const index = require('../../../dbs');
 
 class CarService {
+    static async searchAll({ query }) {
+        const result = await index.search(query);
+        return result;
+    }
+
     static async getAllCars() {
-        return index.search('');
+        const objects = [];
+        await index.browseObjects({
+            query: '',
+            batch: (response) => {
+                objects.push(...response);
+            },
+        });
+
+        return objects;
     }
 
     static async getDetailId({ id }) {
-        return index.getObject(id);
+        const result = await index.getObject(id);
+        return result;
     }
 
     static async create({ make, model, image, description }) {
-        return index
+        const result = await index
             .saveObjects([{ make, model, image, description }], { autoGenerateObjectIDIfNotExist: true })
             .then((result) => result)
             .catch((err) => err);
+
+        return result;
     }
 
     static async update({ id, make, model, image, description }) {

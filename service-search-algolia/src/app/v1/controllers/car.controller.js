@@ -8,7 +8,7 @@ class CarControllers {
     async searchAll(req, res, __) {
         const query = req.query.q;
         new SuccessResponse({
-            message: 'Search success.',
+            message: 'Search All key success.',
             metadata: await CarService.searchAll({ query }),
         }).send(res);
     }

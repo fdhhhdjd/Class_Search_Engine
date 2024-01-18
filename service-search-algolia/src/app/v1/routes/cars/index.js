@@ -8,6 +8,7 @@ const router = express.Router();
 const { asyncHandler } = require('../../../../common/helpers/asyncHandler');
 const CarControllers = require('../../controllers/car.controller');
 
+// -- CURD
 // Todo 1. Get All
 router.get('/get/all', asyncHandler(CarControllers.getAllCars));
 
@@ -22,5 +23,8 @@ router.patch('/update', asyncHandler(CarControllers.update));
 
 // Todo 5. Delete
 router.delete('/delete/:id', asyncHandler(CarControllers.delete));
+
+// -- SEARCH
+router.get('/search/all', asyncHandler(CarControllers.searchAll));
 
 module.exports = router;
