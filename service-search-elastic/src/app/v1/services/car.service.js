@@ -17,6 +17,22 @@ class CarService {
                         fields: ['make', 'model'],
                     },
                 },
+                suggest: {
+                    makeSuggestion: {
+                        prefix: query,
+                        completion: {
+                            field: 'make.suggest',
+                            size: 5,
+                        },
+                    },
+                    modelSuggestion: {
+                        prefix: query,
+                        completion: {
+                            field: 'model.suggest',
+                            size: 5,
+                        },
+                    },
+                },
             },
         });
 

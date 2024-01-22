@@ -1,26 +1,26 @@
 version: '3.8'
 services:
     # Todo: 1. Service Search
-    # service_search:
-    #     container_name: service_search
-    #     depends_on:
-    #         - elastic-search
-    #         - kibana
-    #     restart: always
-    #     build:
-    #         context: .
-    #         dockerfile: ./docker/Dockerfile
-    #     environment:
-    #         - NODE_ENV=${NODE_ENV}
-    #     ports:
-    #         - ${PORT}:${PORT}
-    #     volumes:
-    #         - './src:/usr/src/app/src'
-    #     env_file:
-    #         - .env
-    #     command: yarn dev
-    #     networks:
-    #         - service_search_service-network
+    service_search:
+        container_name: service_search
+        depends_on:
+            - elastic-search
+            - kibana
+        restart: always
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        environment:
+            - NODE_ENV=${NODE_ENV}
+        ports:
+            - ${PORT}:${PORT}
+        volumes:
+            - './src:/usr/src/app/src'
+        env_file:
+            - .env
+        command: yarn dev
+        networks:
+            - service_search_service-network
 
     # Todo: 2. Elastic search
     elastic-search:

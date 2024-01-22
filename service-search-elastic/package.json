@@ -1,5 +1,5 @@
 {
-  "name": "Service Search Elastic",
+  "name": "service-search-elastic",
   "version": "0.0.1",
   "main": "server.js",
   "repository": "https://github.com/fdhhhdjd/Class_Redis_Search_Engine",
