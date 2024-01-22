@@ -1,0 +1,6 @@
+## - http
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.key: elasticsearch.key
+xpack.security.http.ssl.certificate: elasticsearch.crt
+xpack.security.http.ssl.certificate_authorities: ca.crt
+xpack.security.http.ssl.client_authentication: optional
